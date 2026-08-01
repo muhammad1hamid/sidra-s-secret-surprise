@@ -15,6 +15,7 @@ const PHOTOS = [
 
 export function Step4Memories({ onDone }: { onDone: () => void }) {
   const [i, setI] = useState(0);
+  const photo = PHOTOS[i]!;
   const go = (d: number) => setI((v) => (v + d + PHOTOS.length) % PHOTOS.length);
 
   return (
@@ -47,12 +48,12 @@ export function Step4Memories({ onDone }: { onDone: () => void }) {
             className="glass w-[230px] cursor-grab rounded-xl p-3 pb-4 active:cursor-grabbing"
           >
             <img
-              src={PHOTOS[i].src}
-              alt={PHOTOS[i].caption}
+              src={photo.src}
+              alt={photo.caption}
               draggable={false}
               className="h-[210px] w-full rounded-lg object-cover"
             />
-            <p className="mt-3 font-display text-lg text-rose">{PHOTOS[i].caption}</p>
+            <p className="mt-3 font-display text-lg text-rose">{photo.caption}</p>
           </motion.div>
         </AnimatePresence>
 
