@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 /**
  * Continuous floating hearts + sparkle particles.
@@ -7,6 +7,10 @@ import { useMemo } from "react";
 const HEARTS = ["💗", "💖", "🤍", "✨", "💕", "⭐", "🌸"];
 
 export function ParticleField() {
+  // Particles use Math.random(), so only render them after hydration.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   const particles = useMemo(
     () =>
       Array.from({ length: 22 }, (_, i) => ({
@@ -28,7 +32,7 @@ export function ParticleField() {
       <div className="absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-lavender/40 blur-3xl" />
       <div className="absolute left-1/2 top-1/3 h-64 w-64 -translate-x-1/2 rounded-full bg-gold/25 blur-3xl" />
 
-      {particles.map((p) => (
+      {mounted && particles.map((p) => (
         <span
           key={p.id}
           className="absolute bottom-[-10vh] select-none"
