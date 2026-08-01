@@ -71,7 +71,7 @@ export function Step0Lock({ onDone }: { onDone: () => void }) {
             key="ghost"
             exit={{ opacity: 0, y: -8 }}
             onClick={() => setRevealed(true)}
-            className="rounded-full border border-rose/30 px-5 py-2 text-sm text-rose/80 transition-colors hover:bg-white/40"
+            className="rounded-full border border-rose/30 px-5 py-2 text-sm text-rose/80 transition-colors hover:bg-rose/15"
           >
             I know it
           </motion.button>

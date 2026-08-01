@@ -45,8 +45,8 @@ export function Step1Loading({ onDone }: { onDone: () => void }) {
             </defs>
             <path
               d="M50 88 C12 62 6 38 22 24 C34 13 47 20 50 30 C53 20 66 13 78 24 C94 38 88 62 50 88 Z"
-              fill="rgba(255,255,255,0.5)"
-              stroke="rgba(255,255,255,0.9)"
+              fill="rgba(255,255,255,0.10)"
+              stroke="rgba(255,255,255,0.55)"
               strokeWidth="2"
             />
             <g clipPath="url(#heartClip)">
