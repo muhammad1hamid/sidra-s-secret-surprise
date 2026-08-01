@@ -1,24 +1,62 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { AnimatePresence } from "motion/react";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { ParticleField } from "@/components/birthday/ParticleField";
+import { MusicToggle } from "@/components/birthday/MusicToggle";
+import { Step0Lock } from "@/components/birthday/steps/Step0Lock";
+import { Step1Loading } from "@/components/birthday/steps/Step1Loading";
+import { Step2Intro } from "@/components/birthday/steps/Step2Intro";
+import { Step3Countdown } from "@/components/birthday/steps/Step3Countdown";
+import { Step4Memories } from "@/components/birthday/steps/Step4Memories";
+import { Step5Card } from "@/components/birthday/steps/Step5Card";
+import { Step6Celebration } from "@/components/birthday/steps/Step6Celebration";
+import { Step7Question } from "@/components/birthday/steps/Step7Question";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "For Sidra — A Birthday Surprise 💗" },
+      {
+        name: "description",
+        content:
+          "A hidden, one-of-a-kind birthday surprise made with love — unlock it, one sealed layer at a time.",
+      },
+      { property: "og:title", content: "For Sidra — A Birthday Surprise 💗" },
+      {
+        property: "og:description",
+        content: "A cinematic, personal birthday surprise made just for you.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
+/**
+ * Step-based state machine — only ONE section is mounted at a time.
+ * AnimatePresence mode="wait" guarantees exit-before-enter. No going back.
+ */
 function Index() {
+  const [step, setStep] = useState(0);
+  const next = () => setStep((s) => s + 1);
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="relative h-[100dvh] w-full overflow-hidden">
+      <ParticleField />
+      {step >= 1 && <MusicToggle />}
+
+      <AnimatePresence mode="wait">
+        {step === 0 && <Step0Lock key="s0" onDone={next} />}
+        {step === 1 && <Step1Loading key="s1" onDone={next} />}
+        {step === 2 && <Step2Intro key="s2" onDone={next} />}
+        {step === 3 && <Step3Countdown key="s3" onDone={next} />}
+        {step === 4 && <Step4Memories key="s4" onDone={next} />}
+        {step === 5 && <Step5Card key="s5" onDone={next} />}
+        {step === 6 && <Step6Celebration key="s6" onDone={next} />}
+        {step === 7 && <Step7Question key="s7" />}
+      </AnimatePresence>
+    </main>
   );
 }
