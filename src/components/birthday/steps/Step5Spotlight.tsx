@@ -5,9 +5,16 @@ import { StepShell } from "../StepShell";
 
 /* ▶ SPOTLIGHT PHOTOS + CAPTIONS — edit freely (separate from the Memories slider) */
 const SPOTLIGHT = [
-  { src: "/images/moment-1.jpeg", caption: "This one's my favorite 🥹" },
-  { src: "/images/moment-2.jpeg", caption: "Pure sunshine 🌞" },
-  { src: "/images/moment-3.jpeg", caption: "You have no idea how often I look at this photo" },
+  { src: "/images/spotlight-1.jpeg", caption: "This one's my favorite 🥹" },
+  { src: "/images/spotlight-2.jpeg", caption: "Pure sunshine 🌞" },
+  { src: "/images/spotlight-3.jpeg", caption: "You have no idea how often I look at this photo" },
+  { src: "/images/spotlight-4.jpeg", caption: "This smile lives in my head rent free 😌" },
+  { src: "/images/spotlight-5.jpeg", caption: "Effortlessly you, always 💫" },
+  { src: "/images/spotlight-6.jpeg", caption: "That quiet confidence of yours ✨" },
+  { src: "/images/spotlight-7.jpeg", caption: "Somehow always the best part of the frame 🌸" },
+  { src: "/images/spotlight-8.jpeg", caption: "Just… you being you 💗" },
+  { src: "/images/spotlight-9.jpeg", caption: "How does she do that? 🥰" },
+  { src: "/images/spotlight-10.jpeg", caption: "I could look at this forever 💕" },
 ];
 
 /* ▶ INTRO HEADING */
