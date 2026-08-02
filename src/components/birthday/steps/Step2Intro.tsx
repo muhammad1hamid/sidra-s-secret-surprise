@@ -73,7 +73,7 @@ export function Step2Intro({ onDone }: { onDone: () => void }) {
               className="gold-text font-script text-5xl leading-tight"
             >
               Happy Birthday,
-              <br /> My Girl 💗
+              <br /> Sidra 💗
             </motion.h1>
           )}
         </AnimatePresence>

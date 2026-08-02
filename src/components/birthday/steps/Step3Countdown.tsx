@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { Hourglass } from "lucide-react";
 import { StepShell } from "../StepShell";
 import { burstConfetti } from "../confetti";
-
-/* ▶ ADJUST THE COUNTDOWN TARGET DATE HERE (month is 0-indexed: 7 = August) */
-const getTarget = () => new Date(new Date().getFullYear(), 7, 2, 0, 0, 0);
+import { getTarget, isUnlocked } from "../config";
 
 function diff() {
   const ms = getTarget().getTime() - Date.now();
@@ -42,6 +41,7 @@ function Cell({ value, label }: { value: number; label: string }) {
 
 export function Step3Countdown({ onDone }: { onDone: () => void }) {
   const [time, setTime] = useState(diff());
+  const [locked, setLocked] = useState(false);
 
   useEffect(() => {
     const id = setInterval(() => setTime(diff()), 1000);
@@ -49,8 +49,16 @@ export function Step3Countdown({ onDone }: { onDone: () => void }) {
   }, []);
 
   useEffect(() => {
-    if (!time) void burstConfetti("small");
+    if (!time) {
+      void burstConfetti("small");
+      setLocked(false);
+    }
   }, [time]);
+
+  const handleClick = () => {
+    if (isUnlocked()) onDone();
+    else setLocked(true);
+  };
 
   return (
     <StepShell>
@@ -74,8 +82,30 @@ export function Step3Countdown({ onDone }: { onDone: () => void }) {
         </motion.div>
       )}
 
+      <AnimatePresence>
+        {locked && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            className="glass flex max-w-xs flex-col items-center gap-2 rounded-3xl px-5 py-4"
+          >
+            <motion.span
+              animate={{ rotate: [0, 180, 360] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="text-gold"
+            >
+              <Hourglass className="h-6 w-6" />
+            </motion.span>
+            <p className="text-sm text-muted-foreground">
+              Not yet 🥺 come back at 12:00 AM to open the rest of your surprise 💗
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <button
-        onClick={onDone}
+        onClick={handleClick}
         className="animate-soft-pulse glass mt-2 rounded-full px-7 py-3 font-display text-lg text-rose"
       >
         See Memories 💌

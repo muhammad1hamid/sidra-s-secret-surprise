@@ -5,14 +5,16 @@ import { burstConfetti } from "../confetti";
 
 /* ▶ EDIT THE FINAL MESSAGE HERE (each string is one animated line) */
 const FINAL_MESSAGE = [
-  "I knew it 😌💗",
-  "Because from the day I found you, every ordinary moment turned into something worth remembering.",
-  "You're not just my favorite person, Sidra — you're my favorite feeling.",
-  "Happy Birthday, my love. Here's to loving you louder, every single year. 💍✨",
+  "That's what I hoped you'd say 😌",
+  "No matter what we are or become, I just want you to know — you make everything better just by being you.",
+  "Happy Birthday, Sidra. I'm always in your corner. 💗",
   "— Inshal Ahmed",
 ];
 
-const TAUNTS = ["No", "Nope 😅", "Try again 😏", "Nice try 😂", "Not happening 🥰"];
+/* ▶ EDIT THE QUESTION + BUTTON LABELS HERE */
+const QUESTION = "Will you always be my favorite person to talk to? 🥹💛";
+const YES_LABEL = "Always 💛";
+const TAUNTS = ["Maybe", "Nice try 😏", "Not an option 😂", "Nope 😅", "Try again 🥰"];
 
 export function Step7Question() {
   const [said, setSaid] = useState(false);
@@ -64,14 +66,14 @@ export function Step7Question() {
             transition={{ duration: 0.5 }}
             className="flex w-full flex-col items-center gap-8"
           >
-            <h1 className="font-script text-5xl text-rose">Do you love me? 🥺💗</h1>
+            <h1 className="font-script text-4xl leading-snug text-rose">{QUESTION}</h1>
 
             <div className="relative flex w-full items-center justify-center gap-5">
               <button
                 onClick={sayYes}
                 className="animate-soft-pulse glass glow-gold rounded-full px-8 py-3 font-display text-xl text-rose"
               >
-                Yes 💛
+                {YES_LABEL}
               </button>
 
               <motion.button

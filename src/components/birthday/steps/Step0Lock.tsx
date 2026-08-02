@@ -5,10 +5,11 @@ import { StepShell } from "../StepShell";
 import { burstConfetti } from "../confetti";
 
 /* ▶ CHANGE THE PIN HERE */
-const CORRECT_PIN = "2005";
+const CORRECT_PIN = "2007";
 
 /* ▶ EDIT THE HIDDEN HINT TEXT HERE */
 const HINT_TEXT = "Hint: think back to the year everything began... the year you were born 👶✨";
+
 
 export function Step0Lock({ onDone }: { onDone: () => void }) {
   const [revealed, setRevealed] = useState(false);
@@ -62,7 +63,7 @@ export function Step0Lock({ onDone }: { onDone: () => void }) {
         </motion.span>
       </motion.button>
 
-      <h1 className="font-script text-4xl text-rose">This is just for you 💕</h1>
+      <h1 className="font-script text-4xl text-rose">This one's just for you 💕</h1>
       <p className="max-w-xs text-sm text-muted-foreground">{HINT_TEXT}</p>
 
       <AnimatePresence mode="wait">
