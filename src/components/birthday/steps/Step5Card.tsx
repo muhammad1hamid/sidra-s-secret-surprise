@@ -4,7 +4,8 @@ import { StepShell } from "../StepShell";
 
 /* ▶ EDIT THE CARD MESSAGE HERE */
 const CARD_MESSAGE =
-  "To Sidra, the girl who makes my world softer, brighter, and so much more beautiful... Happy Birthday. I hope this year gives you everything your heart is quietly hoping for. I love you more than these words can hold. 💗";
+  "To Sidra — one of the most incredible people I know. Whatever we are or become, I just wanted today to be about celebrating you. You deserve every good thing coming your way this year. Happy Birthday. 💗";
+
 
 export function Step5Card({ onDone }: { onDone: () => void }) {
   const [open, setOpen] = useState(false);
