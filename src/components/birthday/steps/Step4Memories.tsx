@@ -7,10 +7,9 @@ import { StepShell } from "../StepShell";
    Replace `src` with your own image (put files in /public/photos/… or import from src/assets)
    and edit the captions — they're meant to be warm, genuine compliments. */
 const PHOTOS = [
-  { src: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=800&q=80", caption: "That smile that makes everyone's day better ☺️" },
-  { src: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=800&q=80", caption: "The kind of energy people just gravitate towards ✨" },
-  { src: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&q=80", caption: "Effortlessly herself, always 💫" },
-  { src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&q=80", caption: "The person who makes ordinary days feel special 🌸" },
+  { src: "/images/moment-1.jpeg", caption: "That smile that makes everyone's day better ☺️" },
+  { src: "/images/moment-2.jpeg", caption: "The kind of energy people just gravitate towards ✨" },
+  { src: "/images/moment-3.jpeg", caption: "The person who makes ordinary days feel special 🌸" },
 ];
 
 
