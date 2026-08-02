@@ -3,25 +3,11 @@ import { motion, AnimatePresence } from "motion/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { StepShell } from "../StepShell";
 
-import p1 from "@/assets/sidra-1.jpeg.asset.json";
-import p2 from "@/assets/sidra-2.jpeg.asset.json";
-import p3 from "@/assets/sidra-3.jpeg.asset.json";
-import p4 from "@/assets/sidra-4.jpeg.asset.json";
-import p5 from "@/assets/sidra-5.jpeg.asset.json";
-import p6 from "@/assets/sidra-6.jpeg.asset.json";
-import p7 from "@/assets/sidra-7.jpeg.asset.json";
-import p8 from "@/assets/sidra-8.jpeg.asset.json";
-
 /* ▶ SPOTLIGHT PHOTOS + CAPTIONS — edit freely (separate from the Memories slider) */
 const SPOTLIGHT = [
-  { src: p1.url, caption: "This one's my favorite 🥹" },
-  { src: p2.url, caption: "Pure sunshine 🌞" },
-  { src: p3.url, caption: "You have no idea how often I look at this photo" },
-  { src: p4.url, caption: "This smile lives in my head rent free 😌" },
-  { src: p5.url, caption: "Effortlessly you, always 💫" },
-  { src: p6.url, caption: "That quiet confidence of yours ✨" },
-  { src: p7.url, caption: "Somehow always the best part of the frame 🌸" },
-  { src: p8.url, caption: "Just… you being you 💗" },
+  { src: "/images/moment-1.jpeg", caption: "This one's my favorite 🥹" },
+  { src: "/images/moment-2.jpeg", caption: "Pure sunshine 🌞" },
+  { src: "/images/moment-3.jpeg", caption: "You have no idea how often I look at this photo" },
 ];
 
 /* ▶ INTRO HEADING */
