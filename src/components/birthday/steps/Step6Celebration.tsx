@@ -60,8 +60,9 @@ export function Step6Celebration({ onDone }: { onDone: () => void }) {
           transition={{ type: "spring", stiffness: 160, damping: 12, delay: 0.2 }}
           className="gold-text font-script text-5xl leading-tight"
         >
-          Happy Birthday 🎂
-          <br />I love you endlessly 💗
+          Happy Birthday, Sidra 🎂
+          <br />You deserve every bit of
+          <br />happiness today and always 💗
         </motion.h1>
       </div>
 
